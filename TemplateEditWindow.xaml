@@ -1,0 +1,33 @@
+<Window x:Class="DocumentGenerator.TemplateEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DocumentGenerator"
+        Title="Налаштування шаблону"
+        Style="{StaticResource DialogWindowStyle}"
+        SizeToContent="Height" Width="520"
+        WindowStartupLocation="CenterOwner">
+    <StackPanel>
+        <StackPanel Margin="28,24,28,20">
+            <TextBlock Text="Налаштування шаблону" FontSize="20" FontWeight="SemiBold"
+                       Foreground="{StaticResource TextMain}"/>
+            <TextBlock Text="Назва шаблону" FontWeight="SemiBold" FontSize="12"
+                       Foreground="{StaticResource TextMain}" Margin="0,20,0,6"/>
+            <TextBox x:Name="NameBox" MinHeight="36" Padding="10,8" AutomationProperties.Name="Назва шаблону"/>
+            <TextBlock Text="Категорія" FontWeight="SemiBold" FontSize="12"
+                       Foreground="{StaticResource TextMain}" Margin="0,16,0,6"/>
+            <TextBox x:Name="CategoryBox" MinHeight="36" Padding="10,8" AutomationProperties.Name="Категорія"/>
+        </StackPanel>
+        <Border Background="{StaticResource FooterBg}" BorderBrush="{StaticResource Hairline}"
+                BorderThickness="0,1,0,0" Padding="28,16">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Скасувати" IsCancel="True" MinWidth="110" Margin="0,0,8,0"/>
+                <Button IsDefault="True" Click="Save_Click" MinWidth="110" Style="{StaticResource PrimaryButton}">
+                    <StackPanel Orientation="Horizontal">
+                        <local:FluentIcon Data="{StaticResource IconSave}" Width="18" Height="18" Margin="0,0,8,0"/>
+                        <TextBlock Text="Зберегти" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Window>

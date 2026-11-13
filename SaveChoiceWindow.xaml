@@ -1,0 +1,48 @@
+<Window x:Class="DocumentGenerator.SaveChoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DocumentGenerator"
+        Title="Збереження документа"
+        Style="{StaticResource DialogWindowStyle}"
+        SizeToContent="Height" Width="580"
+        WindowStartupLocation="CenterOwner">
+    <StackPanel>
+        <StackPanel Margin="28,24,28,10">
+            <TextBlock Text="Збереження документа" FontSize="20" FontWeight="SemiBold"
+                       Foreground="{StaticResource TextMain}"/>
+            <TextBlock Text="Як зберегти документ?" Foreground="{StaticResource TextMuted}" Margin="0,6,0,18"/>
+
+            <Button Click="AutoName_Click" Style="{StaticResource OptionCardSelectedButton}">
+                <DockPanel>
+                    <local:FluentIcon DockPanel.Dock="Left" Data="{StaticResource IconDoc}" Width="24" Height="24"
+                                      Margin="0,0,14,0" Foreground="{StaticResource Accent}" VerticalAlignment="Center"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Зберегти зі згенерованою назвою" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock x:Name="AutoNamePreview" Foreground="{StaticResource TextMuted}" FontSize="12"
+                                   Margin="0,3,0,0" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </DockPanel>
+            </Button>
+
+            <Button Click="CustomName_Click" Style="{StaticResource OptionCardButton}">
+                <DockPanel>
+                    <local:FluentIcon DockPanel.Dock="Left" Data="{StaticResource IconFolder}" Width="24" Height="24"
+                                      Margin="0,0,14,0" Foreground="{StaticResource Accent}" VerticalAlignment="Center"/>
+                    <local:FluentIcon DockPanel.Dock="Right" Data="{StaticResource IconChevronRight}" Width="16" Height="16"
+                                      Foreground="{StaticResource TextMuted}" VerticalAlignment="Center"/>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Text="Обрати назву файлу самостійно" FontWeight="SemiBold" FontSize="14"/>
+                        <TextBlock Text="Вказати ім’я та папку у вікні збереження" Foreground="{StaticResource TextMuted}"
+                                   FontSize="12" Margin="0,3,0,0"/>
+                    </StackPanel>
+                </DockPanel>
+            </Button>
+        </StackPanel>
+        <Border Background="{StaticResource FooterBg}" BorderBrush="{StaticResource Hairline}"
+                BorderThickness="0,1,0,0" Padding="28,16">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Скасувати" Click="Cancel_Click" IsCancel="True" MinWidth="110"/>
+            </StackPanel>
+        </Border>
+    </StackPanel>
+</Window>
